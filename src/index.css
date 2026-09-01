@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-canvas: #f4f3ee;
+  --bg-page: #e8e7e0;
+  --text-main: #171716;
+  --text-muted: #626059;
+  --border-line: #cfcdc4;
+  --border-strong: #78766e;
+  --accent-orange: #d95a2b;
+  --accent-olive: #596944;
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Pixel art rendering rule for crisp avatars and characters */
+.pixelated {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* Custom technical hatch pattern for top right */
+.hatch-pattern {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    #cfcdc4,
+    #cfcdc4 2px,
+    transparent 2px,
+    transparent 6px
+  );
+}
+
+/* Archival reticle corner ticks */
+.corner-ticks {
+  position: relative;
+}
+
+.corner-ticks::before,
+.corner-ticks::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-color: #171716;
+  pointer-events: none;
+}
+
+/* Hide scrollbar for gallery while keeping scrollability */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
